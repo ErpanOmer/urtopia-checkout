@@ -1,0 +1,28 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "ab43f46533464e7d2e64cde169770121"
+name = "urtopia-checkout"
+application_url = "https://administrative-opportunities-downloaded-worth.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "quickstart-ff1696e5.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://administrative-opportunities-downloaded-worth.trycloudflare.com/auth/callback",
+  "https://administrative-opportunities-downloaded-worth.trycloudflare.com/auth/shopify/callback",
+  "https://administrative-opportunities-downloaded-worth.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-01"
+
+[pos]
+embedded = false
