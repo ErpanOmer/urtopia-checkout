@@ -2,19 +2,27 @@
 
 client_id = "64768d21a7157debe4ac4e00b9737a35"
 name = "urtopia-checkout"
-handle = "urtopia-checkout-2"
-application_url = "https://driver-para-higher-webshots.trycloudflare.com/"
+handle = "urtopia-checkout-ui"
+application_url = "https://training-mobile-da-prince.trycloudflare.com"
 embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "urtopiacheckout.myshopify.com"
+include_config_on_deploy = true
+
+[access.admin]
+direct_api_mode = "online"
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = ""
+scopes = "read_assigned_fulfillment_orders,read_cart_transforms,read_checkout_branding_settings,read_checkouts,read_content,read_customer_merge,read_discounts,read_draft_orders,read_files,read_locales,read_locations,read_orders,read_product_listings,read_products,read_publications,read_script_tags,read_shopify_payments_disputes,read_store_credit_accounts,write_assigned_fulfillment_orders,write_cart_transforms,write_checkout_branding_settings,write_checkouts,write_content,write_customer_merge,write_discounts,write_draft_orders,write_files,write_locales,write_orders,write_products,write_publications,write_script_tags"
 
 [auth]
 redirect_urls = [
-  "https://driver-para-higher-webshots.trycloudflare.com/auth/callback",
-  "https://driver-para-higher-webshots.trycloudflare.com/auth/shopify/callback",
-  "https://driver-para-higher-webshots.trycloudflare.com/api/auth/callback"
+  "https://training-mobile-da-prince.trycloudflare.com/auth/callback",
+  "https://training-mobile-da-prince.trycloudflare.com/auth/shopify/callback",
+  "https://training-mobile-da-prince.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
