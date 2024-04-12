@@ -1133,7 +1133,7 @@
             }
             return dispatcher.useContext(Context);
           }
-          function useState(initialState) {
+          function useState2(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1145,7 +1145,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect(create, deps) {
+          function useEffect2(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create, deps);
           }
@@ -1927,7 +1927,7 @@
           exports.useContext = useContext3;
           exports.useDebugValue = useDebugValue;
           exports.useDeferredValue = useDeferredValue;
-          exports.useEffect = useEffect;
+          exports.useEffect = useEffect2;
           exports.useId = useId;
           exports.useImperativeHandle = useImperativeHandle;
           exports.useInsertionEffect = useInsertionEffect;
@@ -1935,7 +1935,7 @@
           exports.useMemo = useMemo2;
           exports.useReducer = useReducer;
           exports.useRef = useRef2;
-          exports.useState = useState;
+          exports.useState = useState2;
           exports.useSyncExternalStore = useSyncExternalStore;
           exports.useTransition = useTransition;
           exports.version = ReactVersion;
@@ -18402,10 +18402,10 @@
             }
           }
           var jsx5 = jsxWithValidationDynamic;
-          var jsxs = jsxWithValidationStatic;
+          var jsxs2 = jsxWithValidationStatic;
           exports.Fragment = REACT_FRAGMENT_TYPE;
           exports.jsx = jsx5;
-          exports.jsxs = jsxs;
+          exports.jsxs = jsxs2;
         })();
       }
     }
@@ -19121,8 +19121,47 @@
   // node_modules/@shopify/ui-extensions/build/esm/surfaces/checkout/extension.mjs
   var extension = createExtensionRegistrationFunction();
 
-  // node_modules/@shopify/ui-extensions/build/esm/surfaces/checkout/components/Banner/Banner.mjs
-  var Banner = createRemoteComponent("Banner");
+  // node_modules/@shopify/ui-extensions/build/esm/surfaces/checkout/components/Badge/Badge.mjs
+  var Badge = createRemoteComponent("Badge");
+
+  // node_modules/@shopify/ui-extensions/build/esm/surfaces/checkout/components/BlockStack/BlockStack.mjs
+  var BlockStack = createRemoteComponent("BlockStack");
+
+  // node_modules/@shopify/ui-extensions/build/esm/surfaces/checkout/components/Button/Button.mjs
+  var Button = createRemoteComponent("Button");
+
+  // node_modules/@shopify/ui-extensions/build/esm/surfaces/checkout/components/Divider/Divider.mjs
+  var Divider = createRemoteComponent("Divider");
+
+  // node_modules/@shopify/ui-extensions/build/esm/surfaces/checkout/components/Heading/Heading.mjs
+  var Heading = createRemoteComponent("Heading");
+
+  // node_modules/@shopify/ui-extensions/build/esm/surfaces/checkout/components/Image/Image.mjs
+  var Image = createRemoteComponent("Image");
+
+  // node_modules/@shopify/ui-extensions/build/esm/surfaces/checkout/components/InlineLayout/InlineLayout.mjs
+  var InlineLayout = createRemoteComponent("InlineLayout");
+
+  // node_modules/@shopify/ui-extensions/build/esm/surfaces/checkout/components/Link/Link.mjs
+  var Link = createRemoteComponent("Link");
+
+  // node_modules/@shopify/ui-extensions/build/esm/surfaces/checkout/components/List/List.mjs
+  var List = createRemoteComponent("List");
+
+  // node_modules/@shopify/ui-extensions/build/esm/surfaces/checkout/components/ListItem/ListItem.mjs
+  var ListItem = createRemoteComponent("ListItem");
+
+  // node_modules/@shopify/ui-extensions/build/esm/surfaces/checkout/components/Modal/Modal.mjs
+  var Modal = createRemoteComponent("Modal");
+
+  // node_modules/@shopify/ui-extensions/build/esm/surfaces/checkout/components/Text/Text.mjs
+  var Text = createRemoteComponent("Text");
+
+  // node_modules/@shopify/ui-extensions/build/esm/surfaces/checkout/components/TextBlock/TextBlock.mjs
+  var TextBlock = createRemoteComponent("TextBlock");
+
+  // node_modules/@shopify/ui-extensions/build/esm/surfaces/checkout/components/View/View.mjs
+  var View = createRemoteComponent("View");
 
   // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/render.mjs
   var import_react6 = __toESM(require_react(), 1);
@@ -19452,11 +19491,54 @@ ${errorInfo.componentStack}`);
     }
   };
 
-  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/components/Banner/Banner.mjs
-  var Banner2 = createRemoteReactComponent(Banner);
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/components/Badge/Badge.mjs
+  var Badge2 = createRemoteReactComponent(Badge);
+
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/components/BlockStack/BlockStack.mjs
+  var BlockStack2 = createRemoteReactComponent(BlockStack);
+
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/components/Button/Button.mjs
+  var Button2 = createRemoteReactComponent(Button, {
+    fragmentProps: ["overlay"]
+  });
+
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/components/Divider/Divider.mjs
+  var Divider2 = createRemoteReactComponent(Divider);
+
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/components/Heading/Heading.mjs
+  var Heading2 = createRemoteReactComponent(Heading);
+
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/components/Image/Image.mjs
+  var Image2 = createRemoteReactComponent(Image);
+
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/components/InlineLayout/InlineLayout.mjs
+  var InlineLayout2 = createRemoteReactComponent(InlineLayout);
+
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/components/Link/Link.mjs
+  var Link2 = createRemoteReactComponent(Link, {
+    fragmentProps: ["overlay"]
+  });
+
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/components/List/List.mjs
+  var List2 = createRemoteReactComponent(List);
+
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/components/ListItem/ListItem.mjs
+  var ListItem2 = createRemoteReactComponent(ListItem);
+
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/components/Modal/Modal.mjs
+  var Modal2 = createRemoteReactComponent(Modal);
+
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/components/Text/Text.mjs
+  var Text2 = createRemoteReactComponent(Text);
+
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/components/TextBlock/TextBlock.mjs
+  var TextBlock2 = createRemoteReactComponent(TextBlock);
+
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/components/View/View.mjs
+  var View2 = createRemoteReactComponent(View);
 
   // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/hooks/api.mjs
-  var import_react9 = __toESM(require_react(), 1);
+  var import_react22 = __toESM(require_react(), 1);
 
   // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/errors.mjs
   var CheckoutUIExtensionError = class extends Error {
@@ -19468,27 +19550,54 @@ ${errorInfo.componentStack}`);
 
   // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/hooks/api.mjs
   function useApi(_target) {
-    const api = (0, import_react9.useContext)(ExtensionApiContext);
+    const api = (0, import_react22.useContext)(ExtensionApiContext);
     if (api == null) {
       throw new CheckoutUIExtensionError("You can only call this hook when running as a UI extension.");
     }
     return api;
   }
 
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/hooks/subscription.mjs
+  var import_react23 = __toESM(require_react(), 1);
+  function useSubscription(subscription) {
+    const [, setValue] = (0, import_react23.useState)(subscription.current);
+    (0, import_react23.useEffect)(() => {
+      let didUnsubscribe = false;
+      const checkForUpdates = (newValue) => {
+        if (didUnsubscribe) {
+          return;
+        }
+        setValue(newValue);
+      };
+      const unsubscribe = subscription.subscribe(checkForUpdates);
+      checkForUpdates(subscription.current);
+      return () => {
+        didUnsubscribe = true;
+        unsubscribe();
+      };
+    }, [subscription]);
+    return subscription.current;
+  }
+
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/hooks/cost.mjs
+  function useTotalAmount() {
+    return useSubscription(useApi().cost.totalAmount);
+  }
+
   // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/hooks/translate.mjs
-  var import_react10 = __toESM(require_react(), 1);
+  var import_react24 = __toESM(require_react(), 1);
   function useTranslate() {
     const {
       i18n
     } = useApi();
-    const translate = (0, import_react10.useCallback)((...args) => {
+    const translate = (0, import_react24.useCallback)((...args) => {
       const translation = i18n.translate(...args);
       if (!Array.isArray(translation)) {
         return translation;
       }
       return translation.map((part, index) => {
-        if (/* @__PURE__ */ (0, import_react10.isValidElement)(part)) {
-          return /* @__PURE__ */ (0, import_react10.cloneElement)(part, {
+        if (/* @__PURE__ */ (0, import_react24.isValidElement)(part)) {
+          return /* @__PURE__ */ (0, import_react24.cloneElement)(part, {
             key: index
           });
         }
@@ -19506,8 +19615,98 @@ ${errorInfo.componentStack}`);
   );
   function Extension() {
     const translate = useTranslate();
-    const { extension: extension2 } = useApi();
-    return /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Banner2, { title: "checkout-ui", children: translate("welcome", { target: extension2.target }) });
+    const _a = useApi(), { i18n, ui } = _a, extension2 = __objRest(_a, ["i18n", "ui"]);
+    const { amount } = useTotalAmount();
+    const total = i18n.formatCurrency(amount);
+    const installment = i18n.formatCurrency(amount / 24);
+    const onPress = () => ui.overlay.close("my-modal");
+    return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(InlineLayout2, { padding: "tight", border: "base", cornerRadius: "base", columns: ["15%", "fill"], blockAlignment: "center", inlineAlignment: "start", spacing: "extraTight", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Image2, { source: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Klarna-Logo.wine_2x_4831cc33-3ad3-4cb7-8d01-bc04c379811a.png?v=1686369579" }),
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(View2, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(Text2, { children: [
+          " 0% APR, 24 months, ",
+          installment,
+          "/month.\xA0\xA0"
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Link2, { overlay: /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(
+          Modal2,
+          {
+            id: "my-modal",
+            padding: true,
+            title: "About Klarna financing",
+            children: [
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(View2, { blockAlignment: "start", padding: ["none", "none", "loose", "none"], children: [
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: "Choose Klarna as yourpayment option. " }),
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: "Get what you love, choose how you pay. " })
+              ] }),
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(BlockStack2, { padding: "base", border: "base", cornerRadius: "base", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(View2, { children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(InlineLayout2, { columns: ["auto", "fill"], padding: ["none", "none", "extraTight", "none"], children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "large", emphasis: "bold", children: "Pay in 24 months, 0 APR*" }),
+                    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, {})
+                  ] }),
+                  /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(InlineLayout2, { columns: ["auto", "fill", "auto"], children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(Text2, { size: "medium", emphasis: "bold", children: [
+                      "From ",
+                      installment,
+                      " /month"
+                    ] }),
+                    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, {}),
+                    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Badge2, { padding: "tight", tone: "critical", size: "fill", emphasis: "bold", children: "\xA0\xA0\xA0\xA024 payments\xA0\xA0\xA0\xA0" })
+                  ] })
+                ] }),
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Divider2, {}),
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(View2, { children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(InlineLayout2, { columns: ["auto", "fill", "auto"], children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(View2, { opacity: "50", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "large", emphasis: "bold", children: "APR" }) }),
+                    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, {}),
+                    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(View2, { opacity: "50", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "large", emphasis: "bold", children: "Total" }) })
+                  ] }),
+                  /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(InlineLayout2, { columns: ["auto", "fill", "auto"], padding: ["extraTight", "none", "extraTight", "none"], children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: "0% p.a. (fixed)" }),
+                    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, {}),
+                    /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(Text2, { size: "medium", emphasis: "bold", children: [
+                      total,
+                      " + Tax"
+                    ] })
+                  ] }),
+                  /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(InlineLayout2, { columns: ["fill", "auto"], children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, {}),
+                    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(View2, { opacity: "50", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { children: "Promotion Price, limited time only" }) })
+                  ] })
+                ] })
+              ] }),
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(View2, { padding: ["loose", "none", "loose", "none"], children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Heading2, { level: "{3}", children: "How it works" }) }),
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(BlockStack2, { padding: "base", border: "base", cornerRadius: "base", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(List2, { spacing: "loose", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(ListItem2, { children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: "You are now at check out with your selected e-bikes" }) }),
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(ListItem2, { children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: "Fill in your contact info and shipping address, click Continue to Shipping." }) }),
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(ListItem2, { children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: "Confirm your contact and Deliver info, click Continue to Payment" }) }),
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(ListItem2, { children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: "Now you can find Klarna as a payment option in the payment section as the image below" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(View2, { padding: ["loose", "none", "none", "none"] }),
+                  /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Image2, { source: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230614-143316.png?v=1686724422&width=450" })
+                ] }),
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(ListItem2, { children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: "Select Klarna and confirm your billing address, click Pay Now" }) }),
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(ListItem2, { children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: "Now you will be redirected to Klarna payment portal, choose monthly installments as the option that works best for you" }) }),
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(ListItem2, { children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: "Enjoy your shopping and let automatic payments do the rest" }) })
+              ] }) }),
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(View2, { opacity: "90", padding: ["base", "none", "loose", "none"], children: /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(TextBlock2, { children: [
+                "the 0% APR financing is a special subsidy provided by Urtopia, there will be a 13% cancelling fee if an order made with this financing support is cancelled, other payments method made through Klarna shall shall stay unaffected.\xA0\xA0",
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Link2, { external: true, to: "/pages/refund-policy", children: "Refund Policy" })
+              ] }) }),
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+                Button2,
+                {
+                  onPress,
+                  children: "Continue Check out"
+                }
+              ),
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(View2, { padding: ["loose", "none", "none", "none"] })
+            ]
+          }
+        ), children: "Learn how to use" })
+      ] })
+    ] });
   }
 })();
 //# sourceMappingURL=checkout-ui.js.map

@@ -3,7 +3,7 @@
 client_id = "64768d21a7157debe4ac4e00b9737a35"
 name = "urtopia-checkout"
 handle = "urtopia-checkout-ui"
-application_url = "https://training-mobile-da-prince.trycloudflare.com"
+application_url = "https://coin-fy-hawaii-volunteers.trycloudflare.com"
 embedded = true
 
 [build]
@@ -20,9 +20,9 @@ scopes = "read_assigned_fulfillment_orders,read_cart_transforms,read_checkout_br
 
 [auth]
 redirect_urls = [
-  "https://training-mobile-da-prince.trycloudflare.com/auth/callback",
-  "https://training-mobile-da-prince.trycloudflare.com/auth/shopify/callback",
-  "https://training-mobile-da-prince.trycloudflare.com/api/auth/callback"
+  "https://coin-fy-hawaii-volunteers.trycloudflare.com/auth/callback",
+  "https://coin-fy-hawaii-volunteers.trycloudflare.com/auth/shopify/callback",
+  "https://coin-fy-hawaii-volunteers.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

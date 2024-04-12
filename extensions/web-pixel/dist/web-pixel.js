@@ -1,0 +1,1 @@
+(()=>{var r="WebPixel::Render";var e=o=>shopify.extend(r,o);e(({configuration:o,analytics:t,browser:i})=>{t.subscribe("checkout_completed",c=>{console.log("checkout_completed",c.data.checkout)})});})();
