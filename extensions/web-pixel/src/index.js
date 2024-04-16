@@ -7,6 +7,10 @@ register(({ configuration, analytics, browser }) => {
     analytics.subscribe('checkout_completed', (event) => {
       console.log('checkout_completed', event.data.checkout);
     });
+
+    analytics.subscribe('page_viewed', (event) => {
+      console.log('page_viewed', event);
+    });
 });
 
 

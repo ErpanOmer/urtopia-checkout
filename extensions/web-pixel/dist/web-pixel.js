@@ -1,1 +1,1 @@
-(()=>{var r="WebPixel::Render";var e=o=>shopify.extend(r,o);e(({configuration:o,analytics:t,browser:i})=>{t.subscribe("checkout_completed",c=>{console.log("checkout_completed",c.data.checkout)})});})();
+(()=>{var c="WebPixel::Render";var o=r=>shopify.extend(c,r);o(({configuration:r,analytics:t,browser:i})=>{t.subscribe("checkout_completed",e=>{console.log("checkout_completed",e.data.checkout)}),t.subscribe("page_viewed",e=>{console.log("page_viewed",e)})});})();

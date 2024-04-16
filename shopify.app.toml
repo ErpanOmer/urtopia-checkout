@@ -3,7 +3,7 @@
 client_id = "64768d21a7157debe4ac4e00b9737a35"
 name = "urtopia-checkout"
 handle = "urtopia-checkout-ui"
-application_url = "https://coin-fy-hawaii-volunteers.trycloudflare.com"
+application_url = "https://spears-mn-viruses-money.trycloudflare.com"
 embedded = true
 
 [build]
@@ -16,13 +16,13 @@ direct_api_mode = "online"
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "read_assigned_fulfillment_orders,read_cart_transforms,read_checkout_branding_settings,read_checkouts,read_content,read_customer_merge,read_discounts,read_draft_orders,read_files,read_locales,read_locations,read_orders,read_product_listings,read_products,read_publications,read_script_tags,read_shopify_payments_disputes,read_store_credit_accounts,write_assigned_fulfillment_orders,write_cart_transforms,write_checkout_branding_settings,write_checkouts,write_content,write_customer_merge,write_discounts,write_draft_orders,write_files,write_locales,write_orders,write_products,write_publications,write_script_tags"
+scopes = "read_assigned_fulfillment_orders,read_cart_transforms,read_checkout_branding_settings,read_checkouts,read_content,read_customer_events,read_customer_merge,read_discounts,read_draft_orders,read_files,read_locales,read_locations,read_orders,read_product_listings,read_products,read_publications,read_script_tags,read_shopify_payments_disputes,read_store_credit_accounts,write_assigned_fulfillment_orders,write_cart_transforms,write_checkout_branding_settings,write_checkouts,write_content,write_customer_merge,write_discounts,write_draft_orders,write_files,write_locales,write_orders,write_pixels,write_products,write_publications,write_script_tags"
 
 [auth]
 redirect_urls = [
-  "https://coin-fy-hawaii-volunteers.trycloudflare.com/auth/callback",
-  "https://coin-fy-hawaii-volunteers.trycloudflare.com/auth/shopify/callback",
-  "https://coin-fy-hawaii-volunteers.trycloudflare.com/api/auth/callback"
+  "https://spears-mn-viruses-money.trycloudflare.com/auth/callback",
+  "https://spears-mn-viruses-money.trycloudflare.com/auth/shopify/callback",
+  "https://spears-mn-viruses-money.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
