@@ -1,3 +1,13 @@
 {
-  "welcome": "Welcome to the {{target}} extension!"
+  "secure_payment": "100% Secure Payment",
+  "notes": "Notes:",
+  "arrive": "Bike orders may arrive separate from accessories. To ensure that our customers can get hands on the bike ASAP. ",
+  "tax": "Taxes will be calculated at payment.",
+  "boxs": "We DO NOT ship to PO BOXES.",
+  "2Year": "2-Year",
+  "Warranty": "Warranty",
+  "14Day": "14-Day",
+  "FreeReturns": "Free Returns",
+  "Free": "Free",
+  "Shipping": "Shipping"
 }

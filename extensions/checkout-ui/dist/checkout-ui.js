@@ -19547,6 +19547,12 @@ ${errorInfo.componentStack}`);
       this.name = "CheckoutUIExtensionError";
     }
   };
+  var ExtensionHasNoMethodError = class extends Error {
+    constructor(method, target) {
+      super(`Cannot call '${method}()' on target '${target}'. The corresponding property was not found on the API.`);
+      this.name = "ExtensionHasNoMethodError";
+    }
+  };
 
   // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/hooks/api.mjs
   function useApi(_target) {
@@ -19607,6 +19613,15 @@ ${errorInfo.componentStack}`);
     return translate;
   }
 
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/hooks/order.mjs
+  function useOrder() {
+    const api = useApi();
+    if ("order" in api) {
+      return useSubscription(api.order);
+    }
+    throw new ExtensionHasNoMethodError("order", api.extension.target);
+  }
+
   // extensions/checkout-ui/src/Checkout.jsx
   var import_react25 = __toESM(require_react());
   var import_jsx_runtime4 = __toESM(require_jsx_runtime());
@@ -19618,11 +19633,14 @@ ${errorInfo.componentStack}`);
     const translate = useTranslate();
     const _a = useApi(), { i18n, ui } = _a, extension2 = __objRest(_a, ["i18n", "ui"]);
     const { amount } = useTotalAmount();
-    console.log(extension2);
+    const order = useOrder();
+    console.log(order);
+    if (amount < 1500) {
+      return;
+    }
     const total = i18n.formatCurrency(amount);
     const installment = i18n.formatCurrency(amount / 24);
     const onPress = () => {
-      console.log(ui);
       ui.overlay.close("my-modal");
     };
     const model = (0, import_react25.useMemo)(() => /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(
@@ -19630,26 +19648,26 @@ ${errorInfo.componentStack}`);
       {
         id: "my-modal",
         padding: true,
-        title: "About Klarna financing",
+        title: translate("About_Klarna_financing"),
         children: [
           /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(View2, { blockAlignment: "start", padding: ["none", "none", "loose", "none"], children: [
-            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: "Choose Klarna as yourpayment option. " }),
-            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: "Get what you love, choose how you pay. " })
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: translate("Choose_Klarna") }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: translate("Get_what") })
           ] }),
           /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(BlockStack2, { padding: "base", border: "base", cornerRadius: "base", children: [
             /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(View2, { children: [
               /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(InlineLayout2, { columns: ["auto", "fill"], padding: ["none", "none", "extraTight", "none"], children: [
-                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "large", emphasis: "bold", children: "Pay in 24 months, 0 APR*" }),
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "large", emphasis: "bold", children: translate("Pay_in_24") }),
                 /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, {})
               ] }),
               /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(InlineLayout2, { columns: ["auto", "fill", "auto"], children: [
-                /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(Text2, { size: "medium", emphasis: "bold", children: [
-                  "From ",
-                  installment,
-                  " /month"
-                ] }),
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: translate("From_month", { installment }) }),
                 /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, {}),
-                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Badge2, { padding: "tight", tone: "critical", size: "fill", emphasis: "bold", children: "\xA0\xA0\xA0\xA024 payments\xA0\xA0\xA0\xA0" })
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(Badge2, { padding: "tight", tone: "critical", size: "fill", emphasis: "bold", children: [
+                  "\xA0\xA0\xA0\xA0",
+                  translate("24_payments"),
+                  "\xA0\xA0\xA0\xA0"
+                ] })
               ] })
             ] }),
             /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Divider2, {}),
@@ -19657,45 +19675,43 @@ ${errorInfo.componentStack}`);
               /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(InlineLayout2, { columns: ["auto", "fill", "auto"], children: [
                 /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(View2, { opacity: "50", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "large", emphasis: "bold", children: "APR" }) }),
                 /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, {}),
-                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(View2, { opacity: "50", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "large", emphasis: "bold", children: "Total" }) })
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(View2, { opacity: "50", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "large", emphasis: "bold", children: translate("Total") }) })
               ] }),
               /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(InlineLayout2, { columns: ["auto", "fill", "auto"], padding: ["extraTight", "none", "extraTight", "none"], children: [
-                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: "0% p.a. (fixed)" }),
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: translate("0pa") }),
                 /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, {}),
-                /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(Text2, { size: "medium", emphasis: "bold", children: [
-                  total,
-                  " + Tax"
-                ] })
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: translate("total_Tax", { total }) })
               ] }),
               /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(InlineLayout2, { columns: ["fill", "auto"], children: [
                 /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, {}),
-                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(View2, { opacity: "50", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { children: "Promotion Price, limited time only" }) })
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(View2, { opacity: "50", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { children: translate("Promotion_Price") }) })
               ] })
             ] })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(View2, { padding: ["loose", "none", "loose", "none"], children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Heading2, { level: "{3}", children: "How it works" }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(View2, { padding: ["loose", "none", "loose", "none"], children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Heading2, { level: "{3}", children: translate("How_it_works") }) }),
           /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(BlockStack2, { padding: "base", border: "base", cornerRadius: "base", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(List2, { spacing: "loose", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(ListItem2, { children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: "You are now at check out with your selected e-bikes" }) }),
-            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(ListItem2, { children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: "Fill in your contact info and shipping address, click Continue to Shipping." }) }),
-            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(ListItem2, { children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: "Confirm your contact and Deliver info, click Continue to Payment" }) }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(ListItem2, { children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: translate("You_are_now_at") }) }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(ListItem2, { children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: translate("Fill_in_your") }) }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(ListItem2, { children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: translate("Confirm_your_contact") }) }),
             /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(ListItem2, { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: "Now you can find Klarna as a payment option in the payment section as the image below" }),
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: translate("Now_you_can") }),
               /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(View2, { padding: ["loose", "none", "none", "none"] }),
               /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Image2, { source: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230614-143316.png?v=1686724422&width=450" })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(ListItem2, { children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: "Select Klarna and confirm your billing address, click Pay Now" }) }),
-            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(ListItem2, { children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: "Now you will be redirected to Klarna payment portal, choose monthly installments as the option that works best for you" }) }),
-            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(ListItem2, { children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: "Enjoy your shopping and let automatic payments do the rest" }) })
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(ListItem2, { children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: translate("Select_Klarna") }) }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(ListItem2, { children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: translate("Now_you_will_be") }) }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(ListItem2, { children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: translate("Enjoy_your_shopping") }) })
           ] }) }),
           /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(View2, { opacity: "90", padding: ["base", "none", "loose", "none"], children: /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(TextBlock2, { children: [
-            "the 0% APR financing is a special subsidy provided by Urtopia, there will be a 13% cancelling fee if an order made with this financing support is cancelled, other payments method made through Klarna shall shall stay unaffected.\xA0\xA0",
-            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Link2, { external: true, to: "/pages/refund-policy", children: "Refund Policy" })
+            translate("the_APR"),
+            "\xA0\xA0",
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Link2, { external: true, to: "/pages/refund-policy", children: translate("Refund_Policy") })
           ] }) }),
           /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
             Button2,
             {
               onPress,
-              children: "Continue Check out"
+              children: translate("Continue_Check_out")
             }
           ),
           /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(View2, { padding: ["loose", "none", "none", "none"] })
@@ -19706,11 +19722,10 @@ ${errorInfo.componentStack}`);
       /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Image2, { source: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Klarna-Logo.wine_2x_4831cc33-3ad3-4cb7-8d01-bc04c379811a.png?v=1686369579" }),
       /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(View2, { children: [
         /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(Text2, { children: [
-          " 0% APR, 24 months, ",
-          installment,
-          "/month.\xA0\xA0"
+          translate("installment", { installment }),
+          "\xA0\xA0"
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Link2, { overlay: model, children: "Learn how to use" })
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Link2, { overlay: model, children: translate("Learn_how_to_use") })
       ] })
     ] });
   }

@@ -1,3 +1,25 @@
 {
-  "welcome": "Welcome to the {{target}} extension!"
+  "installment": " 0% APR, 24 months, {{ installment }}/month.",
+  "Learn_how_to_use": "Learn how to use",
+  "About_Klarna_financing": "About Klarna financing",
+  "Choose_Klarna": "Choose Klarna as yourpayment option. ",
+  "Get_what": "Get what you love, choose how you pay. ",
+  "Pay_in_24": "Pay in 24 months, 0 APR*",
+  "From_month": "From {{installment}} /month",
+  "24_payments": "24 payments",
+  "Total": "Total",
+  "0pa": "0% p.a. (fixed)",
+  "total_Tax": "{{total}} + Tax",
+  "Promotion_Price": "Promotion Price, limited time only",
+  "How_it_works": "How it works",
+  "You_are_now_at": "You are now at check out with your selected e-bikes",
+  "Fill_in_your": "Fill in your contact info and shipping address, click Continue to Shipping.",
+  "Confirm_your_contact": "Confirm your contact and Deliver info, click Continue to Payment",
+  "Now_you_can": "Now you can find Klarna as a payment option in the payment section as the image below",
+  "Select_Klarna": "Select Klarna and confirm your billing address, click Pay Now",
+  "Now_you_will_be": "Now you will be redirected to Klarna payment portal, choose monthly installments as the option that works best for you",
+  "Enjoy_your_shopping": "Enjoy your shopping and let automatic payments do the rest",
+  "Continue_Check_out": "Continue Check out",
+  "Refund_Policy": "Refund Policy",
+  "the_APR": "the 0% APR financing is a special subsidy provided by Urtopia, there will be a 13% cancelling fee if an order made with this financing support is cancelled, other payments method made through Klarna shall shall stay unaffected."
 }
