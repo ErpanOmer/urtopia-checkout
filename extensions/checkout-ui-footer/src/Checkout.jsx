@@ -32,10 +32,10 @@ function Extension() {
           <Image source="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Norton_by-DigiCert_177x98_2x_5222bced-9208-4c88-95a0-51586b5b4055.png?v=1681735148"></Image>
         </InlineLayout>) : null
       } 
-      <InlineStack blockAlignment="center" inlineAlignment="center">
+      {/* <InlineStack blockAlignment="center" inlineAlignment="center">
         <Image source="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/credit-card_2x_ea106d45-745a-4ffb-9f94-400068bfe194.png?v=1671520567&width=30"></Image>
         <Text size="medium" emphasis="bold">{ translate('secure_payment') }</Text>
-      </InlineStack>
+      </InlineStack> */}
       <InlineLayout columns={['fill', 'fill', 'fill']} padding={['base', 'none', 'loose', 'none']}>
         <View inlineAlignment="center" spacing="none">
           <Image source="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18917_2x_aac5e357-f5cd-46c7-9943-f45c0cc9a227.png?v=1698837301&width=45"></Image>
@@ -53,14 +53,14 @@ function Extension() {
           <Text size="base" emphasis="bold">{translate('Warranty') }</Text>
         </View>
       </InlineLayout>
-      <Heading level="1">{ translate('notes') }</Heading>
+      {/* <Heading level="1">{ translate('notes') }</Heading>
       <View opacity="80">
         <List>
           <ListItem>{ translate('arrive') }</ListItem>
           <ListItem>{ translate('tax') }</ListItem>
           <ListItem>{ translate('boxs') }</ListItem>
         </List>
-      </View>
+      </View> */}
     </BlockStack>
   );
 }

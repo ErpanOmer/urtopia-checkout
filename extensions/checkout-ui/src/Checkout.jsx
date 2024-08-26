@@ -3,6 +3,7 @@ import {
   useTranslate,
   useOrder,
   useStorage,
+  useLanguage,
   reactExtension,
   Link,
   View,
@@ -32,8 +33,7 @@ function Extension() {
   const { i18n, ui, ...extension } = useApi();
   const { amount } = useTotalAmount()
   const order = useOrder()
-
-  console.log(order);
+  const { isoCode } = useLanguage()
 
   if (amount < 1500) {
     return
@@ -54,7 +54,7 @@ function Extension() {
     >
       <View blockAlignment="start" padding={['none', 'none', 'loose', 'none']}>
         <Text size="medium" emphasis="bold">{ translate('Choose_Klarna')}</Text>
-        <Text size="medium" emphasis="bold">{ translate('Get_what')}</Text>
+        {/* <Text size="medium" emphasis="bold">{ translate('Get_what')}</Text> */}
       </View>
       <BlockStack padding="base" border="base" cornerRadius="base">
         <View>
@@ -97,7 +97,9 @@ function Extension() {
           <ListItem>
             <Text size="medium" emphasis="bold">{ translate('Now_you_can') }</Text>
             <View padding={['loose', 'none', 'none', 'none']}></View>
-            <Image source="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230614-143316.png?v=1686724422&width=450"></Image>
+            {
+              isoCode === "de-DE" ? <Image source="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_3_9ad55cd4-340a-4d36-84c0-8ce7cb710538.png?v=1724655768&width=450"></Image> : <Image source="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230614-143316.png?v=1686724422&width=450"></Image>
+            }
           </ListItem>
           <ListItem><Text size="medium" emphasis="bold">{ translate('Select_Klarna') }</Text></ListItem>
           <ListItem><Text size="medium" emphasis="bold">{ translate('Now_you_will_be') }</Text></ListItem>
