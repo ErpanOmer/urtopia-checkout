@@ -3,7 +3,7 @@
 client_id = "64768d21a7157debe4ac4e00b9737a35"
 name = "urtopia-checkout"
 handle = "urtopia-checkout-ui"
-application_url = "https://boundaries-permanent-ncaa-remix.trycloudflare.com"
+application_url = "https://prot-portion-collins-ordering.trycloudflare.com"
 embedded = false
 
 [build]
@@ -20,9 +20,9 @@ scopes = ""
 
 [auth]
 redirect_urls = [
-  "https://boundaries-permanent-ncaa-remix.trycloudflare.com/auth/callback",
-  "https://boundaries-permanent-ncaa-remix.trycloudflare.com/auth/shopify/callback",
-  "https://boundaries-permanent-ncaa-remix.trycloudflare.com/api/auth/callback"
+  "https://prot-portion-collins-ordering.trycloudflare.com/auth/callback",
+  "https://prot-portion-collins-ordering.trycloudflare.com/auth/shopify/callback",
+  "https://prot-portion-collins-ordering.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

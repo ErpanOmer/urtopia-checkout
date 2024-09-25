@@ -19585,6 +19585,14 @@ ${errorInfo.componentStack}`);
     return subscription.current;
   }
 
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/hooks/language.mjs
+  function useLanguage() {
+    const {
+      localization
+    } = useApi();
+    return useSubscription(localization.language);
+  }
+
   // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/hooks/cost.mjs
   function useTotalAmount() {
     return useSubscription(useApi().cost.totalAmount);
@@ -19634,7 +19642,7 @@ ${errorInfo.componentStack}`);
     const _a = useApi(), { i18n, ui } = _a, extension2 = __objRest(_a, ["i18n", "ui"]);
     const { amount } = useTotalAmount();
     const order = useOrder();
-    console.log(order);
+    const { isoCode } = useLanguage();
     if (amount < 1500) {
       return;
     }
@@ -19650,10 +19658,7 @@ ${errorInfo.componentStack}`);
         padding: true,
         title: translate("About_Klarna_financing"),
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(View2, { blockAlignment: "start", padding: ["none", "none", "loose", "none"], children: [
-            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: translate("Choose_Klarna") }),
-            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: translate("Get_what") })
-          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(View2, { blockAlignment: "start", padding: ["none", "none", "loose", "none"], children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: translate("Choose_Klarna") }) }),
           /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(BlockStack2, { padding: "base", border: "base", cornerRadius: "base", children: [
             /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(View2, { children: [
               /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(InlineLayout2, { columns: ["auto", "fill"], padding: ["none", "none", "extraTight", "none"], children: [
@@ -19696,7 +19701,7 @@ ${errorInfo.componentStack}`);
             /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(ListItem2, { children: [
               /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: translate("Now_you_can") }),
               /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(View2, { padding: ["loose", "none", "none", "none"] }),
-              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Image2, { source: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230614-143316.png?v=1686724422&width=450" })
+              isoCode === "de-DE" ? /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Image2, { source: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_3_9ad55cd4-340a-4d36-84c0-8ce7cb710538.png?v=1724655768&width=450" }) : /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Image2, { source: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230614-143316.png?v=1686724422&width=450" })
             ] }),
             /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(ListItem2, { children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: translate("Select_Klarna") }) }),
             /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(ListItem2, { children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { size: "medium", emphasis: "bold", children: translate("Now_you_will_be") }) }),
