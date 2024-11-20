@@ -1,10 +1,10 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
-client_id = "64768d21a7157debe4ac4e00b9737a35"
-name = "urtopia-checkout"
-handle = "urtopia-checkout-ui"
-application_url = "https://prot-portion-collins-ordering.trycloudflare.com"
-embedded = false
+client_id = "64ca9825fa55641fa9829420ca6d8895"
+name = " urtopia-checkout-extend"
+handle = "urtopia-checkout-extend"
+application_url = "https://example.com/"
+embedded = true
 
 [build]
 automatically_update_urls_on_dev = true
@@ -19,11 +19,10 @@ direct_api_mode = "online"
 scopes = ""
 
 [auth]
-redirect_urls = [
-  "https://prot-portion-collins-ordering.trycloudflare.com/auth/callback",
-  "https://prot-portion-collins-ordering.trycloudflare.com/auth/shopify/callback",
-  "https://prot-portion-collins-ordering.trycloudflare.com/api/auth/callback"
-]
+redirect_urls = [ "https://example.com/api/auth" ]
 
 [webhooks]
-api_version = "2024-04"
+api_version = "2024-10"
+
+[pos]
+embedded = false

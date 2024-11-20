@@ -1,5 +1,5 @@
 {
-  "name": "urtopia-checkout",
+  "name": "urtopia-checkout-extend",
   "private": true,
   "scripts": {
     "build": "vite build && vite build --ssr",
