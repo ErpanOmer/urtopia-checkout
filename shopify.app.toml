@@ -3,7 +3,7 @@
 client_id = "64ca9825fa55641fa9829420ca6d8895"
 name = " urtopia-checkout-extend"
 handle = "urtopia-checkout-extend"
-application_url = "https://example.com/"
+application_url = "https://board-civic-ceremony-logo.trycloudflare.com"
 embedded = true
 
 [build]
@@ -19,7 +19,11 @@ direct_api_mode = "online"
 scopes = ""
 
 [auth]
-redirect_urls = [ "https://example.com/api/auth" ]
+redirect_urls = [
+  "https://board-civic-ceremony-logo.trycloudflare.com/auth/callback",
+  "https://board-civic-ceremony-logo.trycloudflare.com/auth/shopify/callback",
+  "https://board-civic-ceremony-logo.trycloudflare.com/api/auth/callback"
+]
 
 [webhooks]
 api_version = "2024-10"
